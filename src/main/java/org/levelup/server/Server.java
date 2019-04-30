@@ -1,8 +1,11 @@
 package org.levelup.server;
 
+import org.level.up.json.test.Cat;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Server {
 
@@ -11,6 +14,7 @@ public class Server {
 
     private static boolean exitFlag;
     private static ServerSocket server;
+    private static ArrayList <Cat> cats = new ArrayList<>();
 
     public static void startServer(int port) {
         try {
@@ -57,6 +61,10 @@ public class Server {
                 exc.printStackTrace();
             }
         }
+    }
+
+    public static void addCats (Cat cat) {
+        cats.add(cat);
     }
 
 }
